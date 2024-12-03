@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТАЙМЕР</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/my.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="timer container-fluid">
+            <p class="header-subtitle mb-0">до конца дня осталось:</p>
+            <div class="banner-tick container">
+                <samp id="h"></samp>
+                <samp id="m"></samp>
+                <samp id="s"></samp>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="row">
+            <div class="dpc col-12">
+                <h3 class="text-center">Депозитный калькулятор</h3>
+                <div class="clk-1">
+
+                    <form name="calculator">
+                        <table>
+                            <tr>
+                                <td>Первоначальный депозит</td>
+                                <td><input class="text-center" name="money" type="number" value="100000" step="10000"
+                                        required></td>
+                            </tr>
+                            <tr>
+                                <td>Срок вклада</td>
+                                <td><select name="mounths" id="">
+                                        <option value="3">3 месяца (минимум)</option>
+                                        <option value="6">6 месяцев (полгода)</option>
+                                        <option value="12">12 месяцев (год)</option>
+                                        <option value="18">18 месяцев (1.5 года)</option>
+                                        <option value="24">24 месяца (два года)</option>
+                                        <option value="30">30 месяцев (2.5 года)</option>
+                                        <option value="36">36 месяцев (3 года)</option>
+                                        <option value="60">60 месяцев (пять лет)</option>
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td>Процентная ставка</td>
+                                <td><input class="text-center" name="interest" type="number" value="18" % required></td>
+                            </tr>
+                        </table>
+                    </form>
+
+                </div>
+                <div class="totaler">
+                    <table id="diagram">
+                        <tr>
+                            <th>Было:</th>
+                            <th>Станет:</th>
+                        </tr>
+                        <tr>
+                            <th id="money-before"></th>
+                            <th id="money-after"></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="background: red; width: 40px; height: 100px;"></div>
+                            </td>
+                            <td>
+                                <div id="height-after" style="background: black; width: 40px; height: 0px;"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="choes-block mb-3">
+                    <h2>Выберите элементы</h2>
+                    <p>Элементов выбрано:<span> 0</span></p>
+                    <p>Сумма покупки:<span id="total"> 0</span></p>
+                    <div class="content-block mb-3">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>
+                        <div>10</div>
+                        <div>11</div>
+                        <div>12</div>
+                    </div>
+
+                </div>
+                <div class="json-block">
+                    <div class="posts-block">
+                        <h2 class="text-center">БЛОГ</h2>
+                        <button>Показать все посты</button>
+                        <a href="#" id="btnr" class="btn">Скрыть посты</a>
+                        <div class="posts-block-container">
+                            <!-- <h3 class="text-center">БЛОГ</h3> -->
+                            <!-- <p><span></span></p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container bg-primary-subtle mt-3">
+                <h1 class="display-3 text-center">Калькулятор визиток</h1>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div id="calc" class=" shadow-lg p-4 rounded-3">
+                            <h3>Расчёт стоимости</h3>
+                            <label for="card-quantity"><strong>Тираж</strong></label>
+                            <input type="number" min="30" value="90" step="30" class="form-control" id="card-quantity">
+                            <label for="card-paper"><strong>Бумага</strong></label>
+                            <select class="form-control" id="card-paper"></select>
+                            <label for="card-color"><strong>Цвет</strong></label>
+                            <select class="form-control" id="card-color"></select>
+                            <h4 class="mt-4">Стоимость тиража:</h4>
+                            <p class="text-center display-5"><span id="final-price">0</span> рублей</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="text-center">
+                            <img src="img/1_0.png" alt="img" id="card-1">
+                            <img src="img/1_1.png" alt="img" id="card-2">
+                            <img src="img/4_0.png" alt="img" id="card-3">
+                            <img src="img/4_1.png" alt="img" id="card-4">
+                            <img src="img/4_4.png" alt="img" id="card-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/my.js"></script>
+</body>
+
+</html>
